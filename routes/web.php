@@ -85,6 +85,15 @@ Route::get('/b2b', function () {
     return view('b2b');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/pages/{slug}', function ($slug) {
+    $title = ucwords(str_replace('-', ' ', $slug));
+    return view('page', compact('title'));
+});
+
 Route::post('/b2b', function (\Illuminate\Http\Request $request) {
     $validated = $request->validate([
         'name' => 'required|string|max:255',

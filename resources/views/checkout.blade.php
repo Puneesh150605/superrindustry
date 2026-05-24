@@ -110,7 +110,7 @@
                             }
                         }
                     @endphp
-                    <span class="order-total">Total to Pay: ${{ number_format($total, 2) }}</span>
+                    <span class="order-total">Total to Pay: ₹{{ number_format($total, 2) }}</span>
                     <button type="submit" class="btn-primary" style="width: 100%;">Complete Purchase</button>
                 </div>
             </form>

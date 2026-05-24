@@ -95,8 +95,8 @@
                                 </div>
                             </td>
                             <td>{{ $details['quantity'] }}</td>
-                            <td style="color: var(--accent);">${{ number_format($details['price'], 2) }}</td>
-                            <td style="color: var(--accent);">${{ number_format($details['price'] * $details['quantity'], 2) }}</td>
+                            <td style="color: var(--accent);">₹{{ number_format($details['price'], 2) }}</td>
+                            <td style="color: var(--accent);">₹{{ number_format($details['price'] * $details['quantity'], 2) }}</td>
                             <td>
                                 <form action="{{ url('/cart/remove/' . $id) }}" method="POST">
                                     @csrf
@@ -110,7 +110,7 @@
             
             <div class="cart-summary gsap-reveal">
                 <span style="color: var(--text-secondary); margin-right: 1rem; font-size: 1.2rem;">Total:</span>
-                <span class="cart-total">${{ number_format($total, 2) }}</span>
+                <span class="cart-total">₹{{ number_format($total, 2) }}</span>
                 <a href="{{ url('/checkout') }}" class="btn-primary">Proceed to Checkout</a>
             </div>
         @else

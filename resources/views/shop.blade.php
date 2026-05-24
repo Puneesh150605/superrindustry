@@ -25,8 +25,9 @@
     .product-card {
         background: var(--bg-card);
         border: 1px solid var(--border-color);
-        padding: 2rem;
-        border-radius: 4px;
+        padding: 4rem;
+        border-radius: 8px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.03);
         transition: var(--transition-smooth);
         text-decoration: none;
         display: block;
@@ -36,7 +37,7 @@
     .product-card:hover {
         transform: translateY(-10px);
         border-color: var(--accent);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
 
     .product-img-wrapper {
@@ -83,8 +84,8 @@
             <p class="text-secondary" style="margin-bottom: 2rem;">Discover our exquisite collection of sustainable luxury wooden toys and hampers.</p>
             
             <form action="{{ url('/shop') }}" method="GET" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
-                <input type="text" name="search" placeholder="Search by name..." value="{{ request('search') }}" style="padding: 1rem; width: 300px; background: transparent; border: 1px solid var(--border-color); color: #fff; outline: none; border-radius: 4px;">
-                <select name="category" style="padding: 1rem; background: transparent; border: 1px solid var(--border-color); color: #fff; outline: none; border-radius: 4px;">
+                <input type="text" name="search" placeholder="Search by name..." value="{{ request('search') }}" style="padding: 1rem; width: 300px; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); outline: none; border-radius: 4px; font-family: var(--font-body);">
+                <select name="category" style="padding: 1rem; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); outline: none; border-radius: 4px; font-family: var(--font-body);">
                     <option value="" style="color: #000;">All Categories</option>
                     <option value="premium-soft-toys" style="color: #000;" {{ request('category') == 'premium-soft-toys' ? 'selected' : '' }}>Soft Toys</option>
                     <option value="luxury-hampers" style="color: #000;" {{ request('category') == 'luxury-hampers' ? 'selected' : '' }}>Hampers</option>
@@ -101,7 +102,7 @@
                     </div>
                     <div class="product-meta">
                         <h3 class="product-title">{{ $product->name }}</h3>
-                        <span class="product-price">${{ number_format($product->price, 2) }}</span>
+                        <span class="product-price">₹{{ number_format($product->price, 2) }}</span>
                     </div>
                 </a>
             @endforeach

@@ -21,23 +21,19 @@
         height: 120%; /* For deeper parallax */
         object-fit: cover;
         z-index: -2;
-        filter: brightness(0.5);
-    }
-
-    .hero-gradient {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right, rgba(15, 17, 16, 0.9) 0%, rgba(15, 17, 16, 0.4) 50%, rgba(15, 17, 16, 0.1) 100%);
-        z-index: -1;
+        filter: brightness(0.85);
     }
 
     .hero-content {
-        max-width: 800px;
-        opacity: 0; /* GSAP will animate this */
+        max-width: 700px;
+        opacity: 0;
         transform: translateY(30px);
+        background: rgba(15, 17, 16, 0.65); /* Dark frosted glass */
+        backdrop-filter: blur(20px);
+        padding: 4rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.3);
     }
 
     .hero-subtitle {
@@ -53,14 +49,14 @@
     .hero-title {
         font-size: 5rem;
         margin-bottom: 2rem;
-        color: #ffffff;
+        color: #ffffff; /* Explicitly white for dark glass box */
         line-height: 1.1;
     }
 
     .hero-desc {
         font-size: 1.2rem;
         line-height: 1.6;
-        color: var(--text-secondary);
+        color: #e0e0e0;
         margin-bottom: 3rem;
         max-width: 600px;
     }
@@ -68,8 +64,10 @@
     /* Brand Story */
     .brand-story {
         padding: 10rem 0;
-        background-color: var(--bg-dark);
+        background-color: var(--bg-main);
         position: relative;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
     }
     
     .story-grid {
@@ -98,7 +96,7 @@
     .story-img-container img {
         width: 100%;
         border-radius: 4px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
     }
 
     /* Collections */
@@ -148,7 +146,8 @@
 
     .collection-title {
         font-size: 3rem;
-        color: #fff;
+        color: #ffffff !important;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         margin-bottom: 1rem;
     }
 
@@ -176,9 +175,10 @@
 
     .product-card {
         background: var(--bg-card);
+        padding: 4rem;
+        border-radius: 8px;
         border: 1px solid var(--border-color);
-        padding: 2rem;
-        border-radius: 4px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         transition: var(--transition-smooth);
         text-decoration: none;
         display: block;
@@ -188,7 +188,7 @@
     .product-card:hover {
         transform: translateY(-10px);
         border-color: var(--accent);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
 
     .product-img-wrapper {
@@ -364,21 +364,56 @@
 
     .massive-text {
         text-align: center;
-        color: #fff;
+        color: #fff !important;
         max-width: 800px;
         padding: 2rem;
+        background: rgba(15, 17, 16, 0.4);
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .massive-text h2 {
+        color: #ffffff !important;
         font-size: 4rem;
+        text-shadow: 0 4px 12px rgba(0,0,0,0.5);
         margin-bottom: 1rem;
+    }
+    
+    .massive-text p {
+        color: #e0e0e0 !important;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+        padding: 8rem 0;
+        background: var(--bg-main);
+    }
+    
+    .testimonial-card {
+        background: var(--bg-card);
+        padding: 3rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+    
+    .quote-icon {
+        font-size: 3rem;
+        color: var(--accent);
+        opacity: 0.3;
+        margin-bottom: 1rem;
+        font-family: var(--font-heading);
     }
 
     /* Newsletter */
     .newsletter {
         padding: 6rem 0;
-        background: rgba(25, 28, 26, 0.8);
+        background: var(--bg-card);
         text-align: center;
+        border-top: 1px solid var(--border-color);
     }
 
     .newsletter input {
@@ -386,13 +421,75 @@
         width: 300px;
         background: transparent;
         border: 1px solid var(--border-color);
-        color: #fff;
+        color: var(--text-primary);
         margin-right: 1rem;
         outline: none;
+        border-radius: 4px;
     }
 
     .newsletter input:focus {
         border-color: var(--accent);
+    }
+    /* White Glove Services */
+    .white-glove {
+        padding: 8rem 0;
+        background: var(--bg-card);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .wg-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .wg-icon {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+    }
+
+    /* Instagram Gallery */
+    .ig-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+    }
+    
+    .ig-item {
+        position: relative;
+        aspect-ratio: 1;
+        overflow: hidden;
+    }
+    
+    .ig-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.5s ease;
+    }
+    
+    .ig-item:hover img {
+        transform: scale(1.1);
+    }
+    
+    .ig-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 2rem;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    .ig-item:hover .ig-overlay {
+        opacity: 1;
     }
 </style>
 @endpush
@@ -401,7 +498,6 @@
     <!-- Hero Section -->
     <section class="hero">
         <img src="{{ asset('images/hero_v2.png') }}" alt="Super Industries Showroom" class="hero-img" id="heroImage">
-        <div class="hero-gradient"></div>
         <div class="container">
             <div class="hero-content" id="heroContent">
                 <span class="hero-subtitle">Super Industries</span>
@@ -486,7 +582,7 @@
                     </div>
                     <div class="product-meta">
                         <h3 class="product-title">{{ $product->name }}</h3>
-                        <span class="product-price">${{ number_format($product->price, 2) }}</span>
+                        <span class="product-price">₹{{ number_format($product->price, 2) }}</span>
                     </div>
                 </a>
             @endforeach
@@ -552,15 +648,90 @@
         </div>
     </section>
 
+    <!-- Client Testimonials -->
+    <section class="testimonials-section container">
+        <div class="section-header gsap-reveal">
+            <span class="hero-subtitle">Testimonials</span>
+            <h2 class="section-title">What Our Patrons Say</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+            <div class="testimonial-card gsap-reveal">
+                <div class="quote-icon">"</div>
+                <p style="font-size: 1.1rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">The craftsmanship is beyond anything I've ever seen. The carved train set we purchased is not just a toy, but a family heirloom. Highly recommend Super Industries.</p>
+                <h4 style="color: var(--text-primary); font-size: 1.2rem;">Eleanor Vance</h4>
+                <span style="color: var(--accent); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">London, UK</span>
+            </div>
+            <div class="testimonial-card gsap-reveal">
+                <div class="quote-icon">"</div>
+                <p style="font-size: 1.1rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">Their luxury baby hampers are my absolute go-to for high-end gifting. The attention to detail and sustainable packaging makes it a truly premium experience.</p>
+                <h4 style="color: var(--text-primary); font-size: 1.2rem;">Jonathan Reed</h4>
+                <span style="color: var(--accent); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">New York, USA</span>
+            </div>
+            <div class="testimonial-card gsap-reveal">
+                <div class="quote-icon">"</div>
+                <p style="font-size: 1.1rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">Absolutely breathtaking. We partnered with them for our B2B wholesale needs and our clients have been completely blown away by the quality.</p>
+                <h4 style="color: var(--text-primary); font-size: 1.2rem;">Sarah Dubois</h4>
+                <span style="color: var(--accent); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Paris, France</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- White Glove Services -->
+    <section class="white-glove">
+        <div class="container">
+            <div class="section-header gsap-reveal" style="margin-bottom: 4rem;">
+                <span class="hero-subtitle">The Super Industries Standard</span>
+                <h2 class="section-title">White-Glove Services</h2>
+            </div>
+            <div class="wg-grid">
+                <div class="wg-item gsap-reveal">
+                    <div class="wg-icon">✧</div>
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 1rem; color: var(--text-primary);">Global Insured Shipping</h3>
+                    <p style="color: var(--text-secondary);">Complimentary, fully insured shipping on all luxury hampers and large sets worldwide.</p>
+                </div>
+                <div class="wg-item gsap-reveal">
+                    <div class="wg-icon">✒</div>
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 1rem; color: var(--text-primary);">Bespoke Monogramming</h3>
+                    <p style="color: var(--text-secondary);">Personalize your heirlooms with complimentary gold-leaf or wood-burned monogramming.</p>
+                </div>
+                <div class="wg-item gsap-reveal">
+                    <div class="wg-icon">♕</div>
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 1rem; color: var(--text-primary);">White-Glove Unboxing</h3>
+                    <p style="color: var(--text-secondary);">Every piece arrives in a custom wooden crate with a certificate of authenticity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="container gsap-reveal">
             <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">Join the Inner Circle</h2>
             <p class="text-secondary" style="margin-bottom: 2rem;">Subscribe to receive exclusive access to new releases and limited edition pieces.</p>
-            <form action="#" method="POST" style="display: flex; justify-content: center; align-items: center;">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit" class="btn-primary" style="padding: 1rem 2rem;">Subscribe</button>
+            <form action="#" method="POST" style="display: flex; justify-content: center; align-items: center; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" required style="width: 100%; border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                <button type="submit" class="btn-primary" style="padding: 1rem 2rem; border-top-left-radius: 0; border-bottom-left-radius: 0;">Subscribe</button>
             </form>
+        </div>
+    </section>
+
+    <!-- Instagram Gallery -->
+    <section class="ig-gallery gsap-reveal">
+        <div class="ig-item">
+            <img src="{{ asset('images/product_train_1.png') }}" alt="Lifestyle">
+            <div class="ig-overlay">@SuperIndustries</div>
+        </div>
+        <div class="ig-item">
+            <img src="{{ asset('images/product_rattle_1.png') }}" alt="Lifestyle">
+            <div class="ig-overlay">@SuperIndustries</div>
+        </div>
+        <div class="ig-item">
+            <img src="{{ asset('images/product_premium_blocks.png') }}" alt="Lifestyle">
+            <div class="ig-overlay">@SuperIndustries</div>
+        </div>
+        <div class="ig-item">
+            <img src="{{ asset('images/product_carved_train.png') }}" alt="Lifestyle">
+            <div class="ig-overlay">@SuperIndustries</div>
         </div>
     </section>
 @endsection

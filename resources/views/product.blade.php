@@ -78,7 +78,7 @@
         
         <div class="product-info gsap-reveal">
             <h1 class="product-title">{{ $product->name }}</h1>
-            <span class="product-price">${{ number_format($product->price, 2) }}</span>
+            <span class="product-price">₹{{ number_format($product->price, 2) }}</span>
             <div class="product-description">
                 {{ $product->description }}
             </div>

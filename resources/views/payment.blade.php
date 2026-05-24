@@ -164,7 +164,7 @@
             
             <div class="payment-header">
                 <h1 class="payment-title">Order #{{ str_pad($order->id, 5, '0', STR_PAD_LEFT) }}</h1>
-                <div class="order-total">${{ number_format($order->total_amount, 2) }}</div>
+                <div class="order-total">₹{{ number_format($order->total_amount, 2) }}</div>
             </div>
 
             <div class="payment-tabs">
@@ -222,7 +222,7 @@
                 <div class="payment-footer">
                     <button type="button" onclick="submitPayment()" class="btn-primary" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
                         <span id="btnText">Pay Securely</span>
-                        <span>${{ number_format($order->total_amount, 2) }}</span>
+                        <span>₹{{ number_format($order->total_amount, 2) }}</span>
                     </button>
                     <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-secondary);">Your payment is securely processed. End-to-end encrypted.</p>
                 </div>

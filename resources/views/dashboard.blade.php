@@ -64,7 +64,7 @@
 
     .info-value {
         font-size: 1.2rem;
-        color: #fff;
+        color: var(--text-primary);
     }
 
     /* Mock Orders Table */
@@ -154,14 +154,14 @@
                             <tr>
                                 <td>#{{ str_pad($order->id, 5, '0', STR_PAD_LEFT) }}</td>
                                 <td>{{ $order->created_at->format('M d, Y') }}</td>
-                                <td>${{ number_format($order->total_amount, 2) }}</td>
+                                <td>₹{{ number_format($order->total_amount, 2) }}</td>
                                 <td>
                                     @if($order->status == 'pending')
                                         <span class="status-badge" style="background: rgba(255, 193, 7, 0.2); color: #ffc107;">Pending Payment</span>
                                     @elseif($order->status == 'processing')
                                         <span class="status-badge" style="background: rgba(40, 167, 69, 0.2); color: #28a745;">Processing</span>
                                     @else
-                                        <span class="status-badge" style="background: rgba(255,255,255,0.1);">{{ ucfirst($order->status) }}</span>
+                                        <span class="status-badge" style="background: rgba(0,0,0,0.05); color: var(--text-primary);">{{ ucfirst($order->status) }}</span>
                                     @endif
                                 </td>
                             </tr>

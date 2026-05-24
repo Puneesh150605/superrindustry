@@ -55,7 +55,7 @@
     }
 
     .stat-card {
-        background: linear-gradient(145deg, rgba(30, 34, 31, 0.9), rgba(20, 22, 21, 0.9));
+        background: var(--bg-card);
         padding: 2.5rem;
         border-radius: 8px;
         border: 1px solid var(--border-color);
@@ -71,10 +71,7 @@
     }
 
     .stat-value {
-        font-size: 3.5rem;
-        color: #fff;
-        font-family: var(--font-heading);
-        margin-bottom: 0.5rem;
+        color: var(--text-primary);
     }
 
     .stat-label {
@@ -85,7 +82,7 @@
     }
 
     .admin-panel {
-        background: rgba(20, 22, 21, 0.8);
+        background: var(--bg-card);
         padding: 3rem;
         border-radius: 8px;
         border: 1px solid var(--border-color);
@@ -95,7 +92,7 @@
     .panel-title {
         font-size: 1.8rem;
         margin-bottom: 2rem;
-        color: #fff;
+        color: var(--text-primary);
         font-family: var(--font-heading);
         display: flex;
         justify-content: space-between;
@@ -120,15 +117,15 @@
 
     .data-table td {
         padding: 1.5rem 1rem;
-        background: rgba(30, 34, 31, 0.4);
+        background: rgba(0, 0, 0, 0.02);
         border-top: 1px solid transparent;
         border-bottom: 1px solid transparent;
         transition: var(--transition-smooth);
     }
     
     .data-table tr:hover td {
-        background: rgba(40, 45, 42, 0.6);
-        border-color: rgba(255, 255, 255, 0.05);
+        background: rgba(0, 0, 0, 0.04);
+        border-color: rgba(0, 0, 0, 0.05);
     }
 
     .data-table tr td:first-child { border-top-left-radius: 6px; border-bottom-left-radius: 6px; }
@@ -140,8 +137,8 @@
     }
 
     .status-select {
-        background: #0f1110;
-        color: #fff;
+        background: #fff;
+        color: var(--text-primary);
         border: 1px solid var(--border-color);
         padding: 0.4rem 0.8rem;
         border-radius: 4px;
@@ -151,7 +148,7 @@
 
     .btn-update {
         background: var(--accent);
-        color: #0f1110;
+        color: #fff;
         border: none;
         padding: 0.4rem 1rem;
         border-radius: 4px;
@@ -300,11 +297,11 @@
                             <tr class="${rowClass}">
                                 <td style="font-family: var(--font-heading); color: var(--accent); font-size: 1.1rem;">#${paddedId}</td>
                                 <td>
-                                    <div style="font-weight: 600; color: #fff;">${userName}</div>
+                                    <div style="font-weight: 600; color: var(--text-primary);">${userName}</div>
                                     <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">${userEmail}</div>
                                 </td>
                                 <td>${paymentBadge}</td>
-                                <td style="font-family: var(--font-heading); font-size: 1.1rem;">$${parseFloat(order.total_amount).toFixed(2)}</td>
+                                <td style="font-family: var(--font-heading); font-size: 1.1rem;">₹${parseFloat(order.total_amount).toFixed(2)}</td>
                                 <td style="color: var(--text-secondary); font-size: 0.85rem;">${dateStr}</td>
                                 <td>${statusBadge}</td>
                                 <td>
