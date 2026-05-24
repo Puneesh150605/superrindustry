@@ -718,11 +718,11 @@
     <!-- Instagram Gallery -->
     <section class="ig-gallery gsap-reveal">
         <div class="ig-item">
-            <img src="{{ asset('images/product_train_1.png') }}" alt="Lifestyle">
+            <img src="{{ asset('images/hero.png') }}" alt="Lifestyle">
             <div class="ig-overlay">@SuperIndustries</div>
         </div>
         <div class="ig-item">
-            <img src="{{ asset('images/product_rattle_1.png') }}" alt="Lifestyle">
+            <img src="{{ asset('images/product_baby_rattle.png') }}" alt="Lifestyle">
             <div class="ig-overlay">@SuperIndustries</div>
         </div>
         <div class="ig-item">
