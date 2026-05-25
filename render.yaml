@@ -3,10 +3,6 @@ services:
     name: super-industries
     env: docker
     plan: free
-    disk:
-      name: sqlite-data
-      mountPath: /var/www/html/database
-      sizeGB: 1
     envVars:
       - key: APP_ENV
         value: production
