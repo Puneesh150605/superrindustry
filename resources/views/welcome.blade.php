@@ -31,6 +31,7 @@
         background: rgba(15, 17, 16, 0.65); /* Dark frosted glass */
         backdrop-filter: blur(20px);
         padding: 4rem;
+        margin-top: 6rem; /* Prevent overlap with fixed navbar */
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 30px 60px rgba(0,0,0,0.3);
