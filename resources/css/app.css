@@ -193,5 +193,15 @@ footer {
 .page-item.disabled .page-link { color: var(--text-secondary); opacity: 0.5; pointer-events: none; }
 .page-link:hover { background: rgba(128,128,128,0.1); }
 
-
-
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar { padding: 1rem 0; }
+    .navbar .container { flex-direction: column; gap: 0.5rem; }
+    .logo { font-size: 1.4rem; letter-spacing: 1px; }
+    .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+    .nav-links a { font-size: 0.7rem; }
+    .container { padding: 0 1rem; }
+    .btn-primary { padding: 0.8rem 1.5rem; font-size: 0.75rem; }
+    footer { padding: 3rem 0 1rem; }
+    footer .grid { display: flex !important; flex-direction: column !important; gap: 2rem !important; }
+}

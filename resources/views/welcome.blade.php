@@ -492,6 +492,27 @@
     .ig-item:hover .ig-overlay {
         opacity: 1;
     }
+    
+    @media (max-width: 768px) {
+        .hero-title { font-size: 2.5rem; }
+        .hero-desc { font-size: 1rem; }
+        .hero-content { padding: 2rem; margin-top: 8rem; }
+        
+        .story-grid, .collections-grid, .eco-grid, .wg-grid, .ig-gallery {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .section-title { font-size: 2rem; }
+        .process-steps { flex-direction: column; gap: 2rem; }
+        .process-steps::before { display: none; }
+        .massive-text h2 { font-size: 2.5rem; }
+        .newsletter input { width: 100%; margin-bottom: 1rem; }
+        
+        .brand-story, .collections, .featured-section, .eco-promise, .process-section, .testimonials-section, .newsletter, .white-glove {
+            padding: 4rem 0;
+        }
+    }
 </style>
 @endpush
 
