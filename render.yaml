@@ -10,6 +10,10 @@ services:
         value: false
       - key: APP_KEY
         value: "base64:ImJSmvDrM3ye57niuDvYwcUZoDlrbDl7qp3uLr0sIWw="
+      - key: APP_URL
+        value: "https://super-industries.onrender.com"
+      - key: ASSET_URL
+        value: "https://super-industries.onrender.com"
       - key: DB_CONNECTION
         value: sqlite
       - key: DB_DATABASE
