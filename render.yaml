@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: super-industries
+    env: docker
+    plan: free
+    disk:
+      name: sqlite-data
+      mountPath: /var/www/html/database
+      sizeGB: 1
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /var/www/html/database/database.sqlite
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: CACHE_STORE
+        value: array
+      - key: SESSION_DRIVER
+        value: cookie
